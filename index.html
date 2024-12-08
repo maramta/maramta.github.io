@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire </title>
+    <link rel="stylesheet" href="stylee.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <video autoplay loop muted src="background.mp4"></video>
+    <div class="wrapper">
+        <form action="solaire_sysem.html" id="loginForm">
+            <h1>Login</h1>
+            <div class="box">
+                <input type="text" placeholder="Username"  id="username" required>
+                <i class='bx bx-user'></i>
+            </div>
+            <div class="box">
+                <input type="password" id="password"  placeholder="password" >
+                <i class='bx bx-lock-alt'></i>
+            </div>
+            <div class="remember">
+                <label for=""><input type="checkbox" >Remember me</label>
+                <a href="">Forget password</a>
+            </div>
+            <button type="submit" class="btn" id="submitBtn"> Login </button>
+            <div class="registre">
+                <p> Don't have an account ! <a href="" > Registre </a></p>
+            </div>
+            <p class="error" id="errorMessage"></p>
+
+            
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const errorMessage = document.getElementById('errorMessage');
+    
+        const validUsername = 'Marumet';
+        const validPassword = '123456maram';
+
+        
+    
+        form.addEventListener('submit', (event) => {
+            errorMessage.textContent = '';
+    
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+    
+        
+        if ( username !== validUsername) {
+            event.preventDefault();
+            errorMessage.textContent = 'Le Nom  est incorrect. Veuillez réessayer.';
+        }
+        else if (password !== validPassword) {
+            event.preventDefault();
+            errorMessage.textContent = 'Le mot de passe est incorrect. Veuillez réessayer.';
+        }
+        });
+    </script>
+
+
+    
+</body>
+</html>
